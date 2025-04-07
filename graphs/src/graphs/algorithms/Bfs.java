@@ -1,4 +1,4 @@
-package graphs.paths;
+package graphs.algorithms;
 
 import java.util.ArrayList;
 

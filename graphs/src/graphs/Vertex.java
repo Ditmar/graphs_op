@@ -32,10 +32,11 @@ public class Vertex {
         return this.name;
     }
 
-    public void connect(Vertex destination, Integer weight) {
+    public Edge connect(Vertex destination, Integer weight) {
         Edge edge = new Edge(this, destination, weight);
         this.edges.add(edge);
         this.neighborhoods.add(destination);
+        return edge;
     }
 
     public void connect(Vertex destination) {

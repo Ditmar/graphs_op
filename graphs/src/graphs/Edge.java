@@ -1,5 +1,7 @@
 package graphs;
 
+import java.util.HashMap;
+
 public class Edge {
     private Vertex source;
     private Vertex destination;
@@ -15,6 +17,14 @@ public class Edge {
         this.source = source;
         this.destination = destination;
         this.weight = 1;
+    }
+
+    public Vertex getSource() {
+        return this.source;
+    }
+
+    public Vertex getDestination() {
+        return this.destination;
     }
 
     @Override
