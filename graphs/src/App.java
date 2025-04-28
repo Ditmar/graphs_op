@@ -1,7 +1,6 @@
 import graphs.Graphs;
 import graphs.Vertex;
-import graphs.algorithms.Bfs;
-import graphs.algorithms.Dfs;
+import graphs.algorithms.Prim;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -33,9 +32,12 @@ public class App {
         graph.addEdge(v5.connect(v1, 1));
         graph.addEdge(v5.connect(v3, 3));
 
-        Bfs.execute(v4);
-        graph.cleanVisited();
-        System.out.println("------------------------");
-        Dfs.execute(v1);
+        Prim prim = new Prim(graph);
+        prim.execute();
+        // Bfs.execute(v4);
+        // graph.cleanVisited();
+        // System.out.println("------------------------");
+        // Dfs.execute(v1);
+
     }
 }

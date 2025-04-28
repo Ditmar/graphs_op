@@ -2,6 +2,7 @@ package graphs.algorithms;
 
 import java.util.ArrayList;
 
+import graphs.Edge;
 import graphs.Graphs;
 import graphs.Vertex;
 
@@ -31,12 +32,25 @@ public class Prim {
             this.connectedList.add(minVertex);
             this.disconnedList.remove(minVertex);
         }
+        System.out.println("Finish Prim");
     }
 
     public Vertex getMinVertex() {
-        Integer min = 9999;
+        Integer min = 99999;
         Vertex candidate = null;
-        // todo:
-        return null;
+        // todo: no es optimo
+        for (Integer i = 0; i < this.connectedList.size(); i++) {
+            for (Integer j = 0; j < this.disconnedList.size(); j++) {
+                Vertex source = this.connectedList.get(i);
+                Vertex destination = this.disconnedList.get(j);
+                String key = source.toString() + "_" + destination.toString();
+                Edge edge = this.graph.getEdge(key);
+                if (edge != null && edge.getWeight() < min) {
+                    min = edge.getWeight();
+                    candidate = edge.getDestination();
+                }
+            }
+        }
+        return candidate;
     }
 }

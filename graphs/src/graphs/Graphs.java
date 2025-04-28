@@ -36,6 +36,10 @@ public class Graphs {
         return mapEdges.get(key);
     }
 
+    public HashMap getMapEdges() {
+        return this.mapEdges;
+    }
+
     public ArrayList<Vertex> getVertexList() {
         return vertexList;
     }
